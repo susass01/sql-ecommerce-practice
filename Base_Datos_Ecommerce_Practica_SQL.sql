@@ -169,5 +169,37 @@ SELECT
 FROM gasto_clientes;
 
 -- ============================================================
+-- EJERCICIO 13: LAG() Y LEAD()
+-- Comparación del gasto entre clientes
+-- ============================================================
+
+WITH gasto_clientes AS (
+    SELECT
+        c.id_cliente,
+        c.nombre,
+        SUM(pr.precio * dp.cantidad) AS total_gastado
+    FROM clientes c
+    JOIN pedidos p
+        ON c.id_cliente = p.id_cliente
+    JOIN detalle_pedido dp
+        ON p.id_pedido = dp.id_pedido
+    JOIN productos pr
+        ON dp.id_producto = pr.id_producto
+    GROUP BY c.id_cliente, c.nombre
+)
+
+SELECT
+    nombre,
+    total_gastado,
+    LAG(total_gastado) OVER (
+        ORDER BY total_gastado DESC, id_cliente
+    ) AS gasto_cliente_anterior,
+    LEAD(total_gastado) OVER (
+        ORDER BY total_gastado DESC, id_cliente
+    ) AS gasto_cliente_siguiente
+FROM gasto_clientes
+ORDER BY total_gastado DESC, id_cliente;
+
+-- ============================================================
 -- FIN DEL SCRIPT
 -- ============================================================
