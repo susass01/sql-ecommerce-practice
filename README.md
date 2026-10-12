@@ -43,6 +43,7 @@ Durante la serie de ejercicios trabajo con conceptos como:
 - ROW_NUMBER()
 - CROSS JOIN
 - ORDER BY
+- SUM() OVER()
   
 ## 📁 Estructura del proyecto
 
@@ -71,6 +72,8 @@ sql-ecommerce-practice/
 │
 └── ejercicio_14/
     └── ejercicio_14.sql
+└── ejercicio_15/
+    └── ejercicio_15.sql
 
 ## 🚀 Cómo utilizar la base de datos
 
