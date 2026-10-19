@@ -44,6 +44,11 @@ Durante la serie de ejercicios trabajo con conceptos como:
 - CROSS JOIN
 - ORDER BY
 - SUM() OVER()
+- START TRANSACTION
+- UPDATE
+- ROLLBACK
+- COMMIT
+- Consistencia de datos
   
 ## 📁 Estructura del proyecto
 
@@ -74,6 +79,8 @@ sql-ecommerce-practice/
     └── ejercicio_14.sql
 └── ejercicio_15/
     └── ejercicio_15.sql
+└── ejercicio_16/
+    └── ejercicio_16.sql
 
 ## 🚀 Cómo utilizar la base de datos
 
